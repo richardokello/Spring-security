@@ -1,6 +1,6 @@
 package com.akhianand.springrolejwt.controller;
 
-import com.akhianand.springrolejwt.config.TokenProvider;
+import com.akhianand.springrolejwt.config.Utilities;
 import com.akhianand.springrolejwt.model.AuthToken;
 import com.akhianand.springrolejwt.model.LoginUser;
 import com.akhianand.springrolejwt.model.User;
@@ -16,8 +16,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/users")
@@ -27,7 +25,7 @@ public class UserController {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private TokenProvider jwtTokenUtil;
+    private Utilities jwtTokenUtil;
 
     @Autowired
     private UserService userService;
